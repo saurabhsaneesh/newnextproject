@@ -29,92 +29,94 @@ export default async function Home() {
   })
 
   return (
-    <section className="furn-carousel-wrapper">
+    <div>
       <div>
-        <Image className='hero-image'
-            src={HeroImage}
-            alt="hero image"
-        />
-        <div className='hero-text'>
-          
-        </div>
-      </div>
-      <Link href="/best-sellers" style={{ textDecoration: 'none' }}>
-        <h2 className="main-heading">
-          Best Sellers{' '}
-          <span style={{ fontSize: '1.2em', marginLeft: '8px' }}>{'〉'}</span>
-        </h2>
-      </Link>
-
-      <div className="furn-carousel-track">
-        {bestSellers.length === 0 ? (
-          <p>No best sellers at the moment.</p>
-        ) : (
-          bestSellers.map((product) => {
-            // 2. Image Logic: Replicating Django's logic
-            // Django's `product.image` usually contains a relative path string (e.g., "products/sofa.jpg")
-            // We must manually prepend the S3 MEDIA_URL.
+          <Image className='hero-image'
+              src={HeroImage}
+              alt="hero image"
+          />
+          <div className='hero-text'>
             
-            let imagePath = product.image; // Check main image column first
+          </div>
+        </div>
+      <section className="furn-carousel-wrapper">
+        <Link href="/best-sellers" style={{ textDecoration: 'none' }}>
+          <h2 className="main-heading">
+            Best Sellers{' '}
+            <span style={{ fontSize: '1.2em', marginLeft: '8px' }}>{'〉'}</span>
+          </h2>
+        </Link>
 
-            // Fallback: If main image is empty, check the gallery table
-            if (!imagePath && product.products_productimage && product.products_productimage.length > 0) {
-                imagePath = product.products_productimage[0].image;
-            }
-
-            // Construct final URL
-            const finalImageUrl = imagePath 
-              ? (imagePath.startsWith('http') ? imagePath : `${MEDIA_URL}${imagePath}`)
-              : '/placeholder.jpg'; // Fallback if absolutely no image found
-
-            return (
+        <div className="furn-carousel-track">
+          {bestSellers.length === 0 ? (
+            <p>No best sellers at the moment.</p>
+          ) : (
+            bestSellers.map((product) => {
+              // 2. Image Logic: Replicating Django's logic
+              // Django's `product.image` usually contains a relative path string (e.g., "products/sofa.jpg")
+              // We must manually prepend the S3 MEDIA_URL.
               
-              <Link
-                key={product.id}
-                href={`/product/${product.slug}`}
-                style={{ textDecoration: 'none', color: 'inherit' }}
-              >
-                <div className="furn-carousel-card">
-                  <div className="furn-image-frame">
-                    <Image
-                        src={finalImageUrl}
-                        alt={product.name}
-                        className="furn-card-image" // Ensure your CSS class applies to the Image component/wrapper
-                        width={500} // Set appropriate dimensions (required for Next.js Image)
-                        height={500}
-                        priority={false} // Only set to true for LCP images (Above the fold)
-                        sizes="(max-width: 600px) 100vw, 33vw" // Helps Next.js optimize based on screen size
-                    />
-                  </div>
+              let imagePath = product.image; // Check main image column first
 
-                  <div className="furn-card-details">
-                    <h3 className="furn-card-title">{product.name}</h3>
-                    
-                    {product.subtitle && (
-                      <p className="furn-card-subtitle">{product.subtitle}</p>
-                    )}
+              // Fallback: If main image is empty, check the gallery table
+              if (!imagePath && product.products_productimage && product.products_productimage.length > 0) {
+                  imagePath = product.products_productimage[0].image;
+              }
 
-                    <div className="furn-card-title-row">
-                      <span className="furn-price">
-                        ₹{Number(product.price).toLocaleString('en-IN')}
-                      </span>
+              // Construct final URL
+              const finalImageUrl = imagePath 
+                ? (imagePath.startsWith('http') ? imagePath : `${MEDIA_URL}${imagePath}`)
+                : '/placeholder.jpg'; // Fallback if absolutely no image found
+
+              return (
+                
+                <Link
+                  key={product.id}
+                  href={`/product/${product.slug}`}
+                  style={{ textDecoration: 'none', color: 'inherit' }}
+                >
+                  <div className="furn-carousel-card">
+                    <div className="furn-image-frame">
+                      <Image
+                          src={finalImageUrl}
+                          alt={product.name}
+                          className="furn-card-image" // Ensure your CSS class applies to the Image component/wrapper
+                          width={500} // Set appropriate dimensions (required for Next.js Image)
+                          height={500}
+                          priority={false} // Only set to true for LCP images (Above the fold)
+                          sizes="(max-width: 600px) 100vw, 33vw" // Helps Next.js optimize based on screen size
+                      />
                     </div>
 
-                    {/* Badge Logic */}
-                    {product.tag === 'best' && (
-                        <div className="furn-badge">Best Seller</div>
-                    )}
+                    <div className="furn-card-details">
+                      <h3 className="furn-card-title">{product.name}</h3>
+                      
+                      {product.subtitle && (
+                        <p className="furn-card-subtitle">{product.subtitle}</p>
+                      )}
 
-                    {product.discount && (
-                      <div className="furn-discount-badge">-{product.discount}</div>
-                    )}
+                      <div className="furn-card-title-row">
+                        <span className="furn-price">
+                          ₹{Number(product.price).toLocaleString('en-IN')}
+                        </span>
+                      </div>
+
+                      {/* Badge Logic */}
+                      {product.tag === 'best' && (
+                          <div className="furn-badge">Best Seller</div>
+                      )}
+
+                      {product.discount && (
+                        <div className="furn-discount-badge">-{product.discount}</div>
+                      )}
+                    </div>
                   </div>
-                </div>
-              </Link>
-            )
-          })
-        )}
-      </div>
-    </section>
+                </Link>
+              )
+            })
+          )}
+        </div>
+      </section>
+    </div>
   )
 }
