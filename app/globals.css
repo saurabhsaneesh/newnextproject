@@ -3,7 +3,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #F5E7C6;
+    background-color: #d1d0d0;
   }
   
 .navbar {
@@ -34,13 +34,13 @@ body {
     color: #d1415d;          /* text-white */
     margin-right: 1.5rem;  /* mr-6 (Tailwind spacing scale: 6 × 0.25rem = 1.5rem) */
     text-decoration: none;
-    font-family: "Chakra Petch", sans-serif;
+    font-family: "arial", sans-serif;
   }
   .navbar-sign-in{
     color: #ffffff;          /* text-white */
     margin-right: 0.5rem;  /* mr-6 (Tailwind spacing scale: 6 × 0.25rem = 1.5rem) */
     text-decoration: none;
-    font-family: "Chakra Petch", sans-serif;
+    font-family: "arial", sans-serif;
     background-color: #d1415d;
     padding: 0.5rem;
     border-radius: 5rem;
@@ -55,7 +55,7 @@ body {
   .dropdown{
     color: #d1415d;          /* text-white */
     text-decoration: none;
-    font-family: "Chakra Petch", sans-serif;
+    font-family: "arial", sans-serif;
   }
   /* Hides the dropdown menu by default */
   .dropdown-content {
@@ -63,9 +63,9 @@ body {
     position: absolute;
     background-color: #ffffff;
     color: #d1415d;
-    padding: 10px;
+    padding: 1rem;
     z-index: 100;
-    min-width: 50px;
+    min-width: 1rem;
   }
   .dropdown-content a {
     text-decoration: none;
@@ -77,21 +77,195 @@ body {
     display: flex;
     flex-direction: column;
   }
+  .search-bar {
+    flex: 0.5;
+    border: none;
+    margin-left: 1rem;
+    padding: 0.5rem 0.7rem;
+    border-bottom: #d1415d 0.08rem solid;
+  }
+  .search-button{
+    background-color: #d1415d;
+    border: none;
+    color: white;
+    padding: 0.5rem 0.7rem;
+    cursor: pointer;
+  }
 
 .home-heading {
     display: flex;
     padding-left: 1rem;
     padding-top: 1rem; /* To prevent content from being hidden behind the fixed navbar */
-    font-family: "Chakra Petch", sans-serif;
+    font-family: "arial", sans-serif;
     justify-content: left;
     font-size: large;
 }
+.main-heading {
+  padding-bottom: 1rem;
+    font-family: "arial", sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ab3d53;
+    margin: 0;
+
+}
+.furn-carousel-wrapper {
+  max-width: 100%;
+  padding: 1rem;
+  overflow-x: hidden; /* Keep outer container clean */
+}
+
+.furn-carousel-track {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 1rem;
+  scrollbar-width: none; /* Firefox */
+}
+
+.furn-carousel-track::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.furn-carousel-track > a.furn-carousel-card {
+  flex: 0 0 auto;
+  width: 22rem;
+  height: 400rem;
+  display: flex;
+  flex-direction: column;
+  scroll-snap-align: start;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0 0.7rem #e0e0e0;
+  border: 0.5rem solid #ddd;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
+}
+
+.furn-carousel-card-link {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+.furn-carousel-card {
+  flex: 0 0 40rem;
+  height: 20rem;
+  width: 14rem;
+  background-color: #F5F5F5;
+  border-radius: 0.5rem;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.furn-image-frame {
+  width: 100%;
+  height: 13rem;
+  padding: 0.5rem;
+  background-color: #F5F5F5;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.furn-card-image {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+
+/* Badge: Summer Deal */
+.furn-badge {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.7rem;
+  background-color: #d93f5e;
+  color: #fff;
+  font-family: arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.5rem;
+  z-index: 2;
+}
+
+/* Discount badge: -15% */
+.furn-discount-badge {
+  font-family: arial, sans-serif;
+  position: absolute;
+  top: 2.5rem;
+  left: 0.7rem;
+  background-color: rgb(97, 218, 97);
+  color: white;
+  font-size: 1rem;
+  padding: 0.3rem 0.5rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  z-index: 2;
+}
+
+/* Bottom content container */
+.furn-card-details {
+  font-family: arial, sans-serif;
+  padding: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-grow: 0;
+}
+
+/* Product name and price */
+.furn-card-title-row {
+  font-family: arial, sans-serif;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 0.3rem;
+  color: #463f3a;
+}
+
+.furn-card-title {
+  font-family: arial, sans-serif;
+  padding-top: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  color: #463f3a;
+}
+
+.furn-price {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #463f3a;
+  font-family: arial, sans-serif;
+}
+
+/* Subtitle (e.g., 'Floral Print Blouse') */
+.furn-card-subtitle {
+  font-size: 1rem;
+  color: #888;
+  margin: 0.7rem 0 1rem;
+  font-weight: 400;
+}
+
+
 footer{
   position: fixed;
   bottom: 0;
-  height: 72px;
+  height: 5rem;
   width: 100%;
-  padding-right: 10px; /* This will now work */
+  padding-right: 1rem; /* This will now work */
   background-color: #222222;
 }
 
@@ -101,8 +275,9 @@ footer{
   align-items: center;
   height: 100%;
   gap: 1.5rem;
-  font-size: 7px;
+  font-size: 0.5rem;
   color: #DDDDDD;
   padding-right: 1.5rem; /* Use padding instead of margin */
-  font-family: "Chakra Petch", sans-serif;
+  font-family: "arial", sans-serif;
 }
+

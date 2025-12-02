@@ -37,8 +37,8 @@ export default function ScrollNavbar() {
           <Link href="sign-in" className="navbar-sign-in">Sign In</Link>
           <div>
             <form action="search" method="get">
-              <input type="text" name="q" placeholder="Search..." required />
-              <button type="submit"></button>
+              <input className="search-bar " type="text" name="q" placeholder="Search..." required />
+              <button className="search-button" type="submit"></button>
             </form>
           </div>
         </div>
