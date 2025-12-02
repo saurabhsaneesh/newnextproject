@@ -2,7 +2,7 @@
 import prisma from '@/lib/prisma'
 import Link from 'next/link'
 import Image from 'next/image';
-
+import HeroImage from "./images/hero image.jpg";
 // Ensure this is set in your .env file
 const MEDIA_URL = process.env.S3_MEDIA_URL || '' 
 
@@ -30,6 +30,15 @@ export default async function Home() {
 
   return (
     <section className="furn-carousel-wrapper">
+      <div>
+        <Image className='hero-image'
+            src={HeroImage}
+            alt="hero image"
+        />
+        <div className='hero-text'>
+          
+        </div>
+      </div>
       <Link href="/best-sellers" style={{ textDecoration: 'none' }}>
         <h2 className="main-heading">
           Best Sellers{' '}
@@ -59,6 +68,7 @@ export default async function Home() {
               : '/placeholder.jpg'; // Fallback if absolutely no image found
 
             return (
+              
               <Link
                 key={product.id}
                 href={`/product/${product.slug}`}
