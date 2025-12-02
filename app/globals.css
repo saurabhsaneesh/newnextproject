@@ -112,8 +112,9 @@ body {
     justify-content: left;
     font-size: large;
 }
-.main-heading {
-  padding-bottom: 1rem;
+h1 {
+  padding-left: 1rem;
+   padding-bottom: 1rem;
     font-family: "arial", sans-serif;
     font-size: 2rem;
     font-weight: 600;
@@ -125,6 +126,7 @@ body {
   max-width: 100%;
   padding: 1rem;
   overflow-x: hidden; /* Keep outer container clean */
+  padding-bottom: 1rem;
 }
 
 .furn-carousel-track {
@@ -135,6 +137,7 @@ body {
   -webkit-overflow-scrolling: touch;
   gap: 1rem;
   scrollbar-width: none; /* Firefox */
+  padding-bottom: 1rem;
 }
 
 .furn-carousel-track::-webkit-scrollbar {
@@ -276,8 +279,6 @@ body {
 
 
 footer{
-  position: fixed;
-  bottom: 0;
   height: 5rem;
   width: 100%;
   padding-right: 1rem; /* This will now work */
