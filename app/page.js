@@ -1,6 +1,7 @@
 // app/page.js
 import prisma from '@/lib/prisma'
 import Link from 'next/link'
+import Image from 'next/image';
 
 // Ensure this is set in your .env file
 const MEDIA_URL = process.env.S3_MEDIA_URL || '' 
@@ -65,10 +66,14 @@ export default async function Home() {
               >
                 <div className="furn-carousel-card">
                   <div className="furn-image-frame">
-                    <img 
-                      src={finalImageUrl} 
-                      alt={product.name} 
-                      className="furn-card-image" 
+                    <Image
+                        src={finalImageUrl}
+                        alt={product.name}
+                        className="furn-card-image" // Ensure your CSS class applies to the Image component/wrapper
+                        width={500} // Set appropriate dimensions (required for Next.js Image)
+                        height={500}
+                        priority={false} // Only set to true for LCP images (Above the fold)
+                        sizes="(max-width: 600px) 100vw, 33vw" // Helps Next.js optimize based on screen size
                     />
                   </div>
 
@@ -81,7 +86,6 @@ export default async function Home() {
 
                     <div className="furn-card-title-row">
                       <span className="furn-price">
-                        {/* Format price with Indian Rupee symbol */}
                         ₹{Number(product.price).toLocaleString('en-IN')}
                       </span>
                     </div>

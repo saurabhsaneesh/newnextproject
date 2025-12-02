@@ -153,7 +153,7 @@ body {
 
 .furn-carousel-card {
   flex: 0 0 40rem;
-  height: 20rem;
+  height: 21rem;
   width: 14rem;
   background-color: #F5F5F5;
   border-radius: 0.5rem;
@@ -178,10 +178,11 @@ body {
 
 .furn-card-image {
   width: 100%;
-  height: 100%;
-  max-height: 100%;
+  height: 13rem;
+  padding-top: 0.7rem;
+  max-height: 13rem;
   object-fit: cover;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
 }
 
 
@@ -190,7 +191,7 @@ body {
   position: absolute;
   top: 0.5rem;
   left: 0.7rem;
-  background-color: #d93f5e;
+  background-color: #1b1b1b;
   color: #fff;
   font-family: arial, sans-serif;
   font-size: 0.9rem;
@@ -223,16 +224,18 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   flex-grow: 0;
+  height: 100%;
 }
 
 /* Product name and price */
 .furn-card-title-row {
   font-family: arial, sans-serif;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-bottom: 0.3rem;
+  padding-bottom: 0.5rem;
+  padding-right: 0.5rem;
   color: #463f3a;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 .furn-card-title {
