@@ -1,0 +1,108 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #F5E7C6;
+  }
+  
+.navbar {
+    height: 3rem; /* h-12 */
+    width: 100%; /* w-full */
+    display: flex; /* flex */
+    align-items: center; /* items-center */
+    background-color: #ffffff; 
+
+  }
+  .navbar-links{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* justify-end */
+    width: 100%; /* w-full */
+    font-size: small;
+  }
+  .navbar-logo {
+    display:flex;
+    flex-direction: row;
+    color: #d1415d;          /* text-white */
+    margin-left: 0.5rem;  /* ml-6 (Tailwind spacing scale: 6 × 0.25rem = 1.5rem) */
+    padding: 1rem;
+    padding-top: 1rem;
+
+  }
+  .navbar-text {
+    color: #d1415d;          /* text-white */
+    margin-right: 1.5rem;  /* mr-6 (Tailwind spacing scale: 6 × 0.25rem = 1.5rem) */
+    text-decoration: none;
+    font-family: "Chakra Petch", sans-serif;
+  }
+  .navbar-sign-in{
+    color: #ffffff;          /* text-white */
+    margin-right: 0.5rem;  /* mr-6 (Tailwind spacing scale: 6 × 0.25rem = 1.5rem) */
+    text-decoration: none;
+    font-family: "Chakra Petch", sans-serif;
+    background-color: #d1415d;
+    padding: 0.5rem;
+    border-radius: 5rem;
+  }
+
+  .navbar-dropdown{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* justify-end */
+    font-size: small;
+  }
+  .dropdown{
+    color: #d1415d;          /* text-white */
+    text-decoration: none;
+    font-family: "Chakra Petch", sans-serif;
+  }
+  /* Hides the dropdown menu by default */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    color: #d1415d;
+    padding: 10px;
+    z-index: 100;
+    min-width: 50px;
+  }
+  .dropdown-content a {
+    text-decoration: none;
+    color: #d1415d;
+  }
+
+  /* Shows the dropdown when hovering Products */
+  .dropdown:hover .dropdown-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+.home-heading {
+    display: flex;
+    padding-left: 1rem;
+    padding-top: 1rem; /* To prevent content from being hidden behind the fixed navbar */
+    font-family: "Chakra Petch", sans-serif;
+    justify-content: left;
+    font-size: large;
+}
+footer{
+  position: fixed;
+  bottom: 0;
+  height: 72px;
+  width: 100%;
+  padding-right: 10px; /* This will now work */
+  background-color: #222222;
+}
+
+.footer-content{
+  display: flex;
+  justify-content: flex-end; /* not "right" */
+  align-items: center;
+  height: 100%;
+  gap: 1.5rem;
+  font-size: 7px;
+  color: #DDDDDD;
+  padding-right: 1.5rem; /* Use padding instead of margin */
+  font-family: "Chakra Petch", sans-serif;
+}
