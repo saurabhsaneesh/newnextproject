@@ -81,15 +81,18 @@ body {
     flex: 0.5;
     border: none;
     margin-left: 1rem;
+    margin-right: 1rem;
     padding: 0.5rem 0.7rem;
     border-bottom: #d1415d 0.08rem solid;
+    width: rem;
   }
   .search-button{
-    background-color: #d1415d;
+    background-color: #ffffff;
     border: none;
-    color: white;
-    padding: 0.5rem 0.7rem;
+    color: #d1415d;
+    padding: 0rem 0rem;
     cursor: pointer;
+    margin-right: 1rem;
   }
 .hero-image{
     width: 100%;
@@ -279,7 +282,7 @@ h1 {
 
 
 footer{
-  height: 5rem;
+  height: 15rem;
   width: 100%;
   padding-right: 1rem; /* This will now work */
   background-color: #0b0b0b;
@@ -288,12 +291,13 @@ footer{
 .footer-content{
   display: flex;
   justify-content: flex-end; /* not "right" */
+  flex-direction: column;
   align-items: center;
   height: 100%;
   gap: 1.5rem;
   font-size: 0.5rem;
   color: #DDDDDD;
-  padding-right: 1.5rem; /* Use padding instead of margin */
+  padding-right: 3rem; /* Use padding instead of margin */
   font-family: "arial", sans-serif;
 }
 

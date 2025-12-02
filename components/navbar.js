@@ -28,9 +28,9 @@ export default function ScrollNavbar() {
             <div className="dropdown">
               <Link href="#" className="navbar-text">Discover</Link>
               <div className="dropdown-content">
-                <Link href="/Offers">Offers</Link>
-                <Link href="/Best-Sellers">Best Sellers</Link>
-                <Link href="/New-Arrivals">New-Arrivals</Link>
+                <Link href="/offers">Offers</Link>
+                <Link href="/best-Sellers">Best Sellers</Link>
+                <Link href="/new-Arrivals">New-Arrivals</Link>
               </div>
             </div>
           </div>
@@ -38,7 +38,9 @@ export default function ScrollNavbar() {
           <div>
             <form action="search" method="get">
               <input className="search-bar " type="text" name="q" placeholder="Search..." required />
-              <button className="search-button" type="submit"></button>
+              <button className="search-button" type="submit">
+                <i className="fa-solid fa-magnifying-glass"></i>
+              </button>
             </form>
           </div>
         </div>

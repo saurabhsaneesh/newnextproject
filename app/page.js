@@ -16,8 +16,7 @@ export default async function Home() {
           src={HeroImage}
           alt="hero image"
       />
-      <div className='hero'>
-        "Discover"
+      <div className='hero-title'>
       </div>
       <h1> Our Best Sellers</h1>
       <ProductDisplay producttag="best" producttitle="best seller"/>
